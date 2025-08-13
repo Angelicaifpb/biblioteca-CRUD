@@ -8,6 +8,10 @@ from app.models.autor_model import AutorModel
 autores_service = AutorService()
 livros_service = LivroService()
 
+@app.route("/")
+def index():
+    return redirect(url_for("list_autores"))
+
 @app.route("/autores")
 def list_autores():
     autores = autores_service.get_all_autores()
