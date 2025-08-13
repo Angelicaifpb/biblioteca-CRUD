@@ -1,40 +1,32 @@
-class LivroModel:
-    def __init__(self, id, titulo, genero, ano_publicacao, autor_id, autor_nome=None):
+class AutorModel:
+    def __init__(self, id, nome, nacionalidade, data_nascimento):
         self.__id = id
-        self.__titulo = titulo
-        self.__genero = genero
-        self.__ano_publicacao = ano_publicacao
-        self.__autor_id = autor_id
-        self.autor_nome = autor_nome 
+        self.__nome = nome
+        self.__nacionalidade = nacionalidade
+        self.__data_nascimento = data_nascimento
 
     # Getters
     def get_id(self):
         return self.__id
 
-    def get_titulo(self):
-        return self.__titulo
+    def get_nome(self):
+        return self.__nome
 
-    def get_genero(self):
-        return self.__genero
+    def get_nacionalidade(self):
+        return self.__nacionalidade
 
-    def get_ano_publicacao(self):
-        return self.__ano_publicacao
-
-    def get_autor_id(self):
-        return self.__autor_id
+    def get_data_nascimento(self):
+        return self.__data_nascimento
 
     # Setters
     def set_id(self, id):
         self.__id = id
 
-    def set_titulo(self, titulo):
-        self.__titulo = titulo
+    def set_nome(self, nome):
+        self.__nome = nome
 
-    def set_genero(self, genero):
-        self.__genero = genero
+    def set_nacionalidade(self, nacionalidade):
+        self.__nacionalidade = nacionalidade
 
-    def set_ano_publicacao(self, ano_publicacao):
-        self.__ano_publicacao = ano_publicacao
-
-    def set_autor_id(self, autor_id):
-        self.__autor_id = autor_id
+    def set_data_nascimento(self, data_nascimento):
+        self.__data_nascimento = data_nascimento

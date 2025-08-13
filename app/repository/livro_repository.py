@@ -76,3 +76,4 @@ class LivroRepository:
         cursor = connection.cursor()
         cursor.execute("SELECT * FROM livros WHERE autor_id = ?", (autor_id,))
         return cursor.fetchall()
+

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Lista de Livros{% endblock %}
+{% block content %}
+<h2>Lista de Livros</h2>
+
+<a href="{{ url_for('create_livro') }}" class="btn">+ Novo Livro</a>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Gênero</th>
+            <th>Ano</th>
+            <th>Autor</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for livro in livros %}
+        <tr>
+            <td>{{ livro.get_id() }}</td>
+            <td>{{ livro.get_titulo() }}</td>
+            <td>{{ livro.get_genero() }}</td>
+            <td>{{ livro.get_ano_publicacao() }}</td>
+            <td>{{ livro.autor_nome }}</td>
+            <td>
+                <a href="{{ url_for('edit_livro', id=livro.get_id()) }}">Editar</a> |
+                <a href="{{ url_for('delete_livro', id=livro.get_id()) }}" onclick="return confirm('Tem certeza?')">Excluir</a>
+                
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<p>
+    <a href="{{ url_for('list_autores') }}">Ver Autores</a>
+</p>
+
+{% endblock %}

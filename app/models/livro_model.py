@@ -1,10 +1,11 @@
 class LivroModel:
-    def __init__(self, id, titulo, genero, ano_publicacao, autor_id):
+    def __init__(self, id, titulo, genero, ano_publicacao, autor_id, autor_nome=None):
         self.__id = id
         self.__titulo = titulo
         self.__genero = genero
         self.__ano_publicacao = ano_publicacao
         self.__autor_id = autor_id
+        self.autor_nome = autor_nome  # atributo público, usado apenas para exibir nas views
 
     # Getters
     def get_id(self):

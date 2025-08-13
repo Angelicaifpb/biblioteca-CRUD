@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Cadastro de Autor{% endblock %}
+{% block content %}
+<h2>{{ 'Editar Autor' if autor else 'Novo Autor' }}</h2>
+<form method="POST">
+    <label>Nome:</label>
+    <input type="text" name="nome" value="{{ autor.get_nome() if autor else '' }}" required>
+
+    <label>Nacionalidade:</label>
+    <input type="text" name="nacionalidade" value="{{ autor.get_nacionalidade() if autor else '' }}" required>
+
+    <label>Data de Nascimento:</label>
+    <input type="date" name="data_nascimento" value="{{ autor.get_data_nascimento() if autor else '' }}" required>
+
+    <button type="submit">Salvar</button>
+<p>
+ <a href="{{ url_for('list_autores') }}">Cancelar</a>
+</p>
+</form>
+{% endblock %}
